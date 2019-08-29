@@ -1,0 +1,44 @@
+REpresentational State Transfer
+
+CreateReadUpdateDestroy
+
+website.com/dogs/new
+website.com/dogs
+website.com/dogs/fido or 234 
+website.com/dogs (instead of GET request, use POST)
+website.com/dogs/fido or 234 (instead of GET request PATCH or DELETE)
+
+
+Model View Controller
+
+Model holds the data and exposes ways to manipulate it (scraper class,
+or whatever class you were creating objects of)
+ - whatever thing you're creating records for in the DB
+
+ View
+  cli class generated the view by using `puts`
+  html or erb docs
+
+Controller
+  cli class logic
+  case statements, if statements, while loops
+  instructions for what to do when each route is hit
+
+
+
+GET request to https://www.facebook.com
+  - it showed a login page
+  - I typed in some info in some fields
+  - hit login
+POST request to https://www.facebook.com/login/device-based/regular/login/?login_attempt=1&lwv=110
+
+ - facebook's controller checked to see if my credentials were valid
+ (has to use the User model to see if morgvanny@gmail.com is valid, and if the password is correct)
+ - redirected me based on that
+
+ GET https://www.facebook.com/login/device-based/regular/login/?login_attempt=1&lwv=110
+
+  - show different login page than before
+
+OR
+  GET https://www.facebook.com/feed

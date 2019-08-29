@@ -1,0 +1,13 @@
+<% @books.each do |book| %>
+  <p><a href="/books/<%= book.title%>"><%= book.title %></a>
+  <span> likes: <%= book.likes%> </span>
+  <form action="/books/<%= book.title %>/like" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <input type="submit" value="like">
+  </form>
+  <form action="/books/<%= book.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="delete">
+  </form>
+  </p>
+<% end %>
