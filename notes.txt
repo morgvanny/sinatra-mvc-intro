@@ -46,15 +46,6 @@ PATCH (really POST) '/books/:id' - update book (form submission)
 
 
 
-get '/books'
-get '/books/:id'
-get '/books/new'
-get '/books/:id/edit'
-post '/books'
-patch '/books/:id'
-delete '/books/:id'
-
-
 READ
 get '/books'
 get '/books/:id'
