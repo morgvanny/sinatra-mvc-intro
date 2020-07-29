@@ -23,12 +23,12 @@ module GoogleBooks
 
     private
 
-    def author_url(max_results = 20)
-      "#{BASE_URL}#{author_sanitizer(author)}&maxResults=#{max_results}"
+    def author_url(max_results = 5)
+      "#{BASE_URL}\"#{author}\"&inauthor:\"#{author}\"&maxResults=#{max_results}"
     end
 
     def author_sanitizer(author)
-      author.gsub(/\W+/, '').downcase
+      author.gsub(/\W+/, '+').downcase
     end
   end
 end

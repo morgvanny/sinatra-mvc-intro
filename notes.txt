@@ -1,0 +1,71 @@
+Model
+- classes for organizing data
+- talking to the database
+- describes/determines relationships between objects
+
+Views
+- what you want people to see (html, css, js, puts, xml, images, videos, audio)
+- able to receive user input/interaction
+- direct user input and output to the user
+
+Controller
+- manage routes/traffic
+- receives request, returns response
+- most of the logic
+
+
+
+RESTful - conventions around naming routes and having certain behavior depending on the route
+
+
+REpresentational - the url should clearly represent what state is transferring where
+State - all current information
+Transfer - getting that state from one place to another
+
+
+
+Model: Book
+
+table name: books
+
+routes/urls:
+
+GET '/books' - see all the books (index of books)
+
+GET '/books/:id' - see specific book (show book)
+
+GET '/books/new' - see form for submitting (new book)
+
+GET '/books/:id/edit' - see form for editing existing book (edit book)
+
+DELETE (really POST) - '/books/:id' - getting rid of a book
+
+POST '/books' - create a book. user sends data to create a new book (form submission)
+
+PATCH (really POST) '/books/:id' - update book (form submission)
+
+
+
+get '/books'
+get '/books/:id'
+get '/books/new'
+get '/books/:id/edit'
+post '/books'
+patch '/books/:id'
+delete '/books/:id'
+
+
+READ
+get '/books'
+get '/books/:id'
+get '/books/new'
+get '/books/:id/edit'
+
+CREATE
+post '/books'
+
+UPDATE
+patch '/books/:id'
+
+DELETE
+delete '/books/:id'
