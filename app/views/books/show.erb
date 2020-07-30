@@ -2,3 +2,7 @@
 <h2><%= @book.author %></h2>
 <p><%= @book.snippet %></p>
 <a href="/books/<%= @book.id%>/edit">edit</a>
+<form action=/books/<%=@book.id%> method=POST>
+<input type=hidden name=_method value=delete>
+<input type=submit value=delete>
+</form>
