@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-
+ruby "2.6.6"
 gem 'activerecord', '~> 5'
 gem 'sinatra-activerecord'
 gem 'rake'

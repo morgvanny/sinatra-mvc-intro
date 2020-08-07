@@ -4,6 +4,6 @@ Bundler.require
 require_all 'app'
 
 ActiveRecord::Base.establish_connection({
-  adapter: 'pg',
+  adapter: 'postgres',
   database: ENV['DATABASE_URL'] || 'postgres://localhost/mydb'
 })
