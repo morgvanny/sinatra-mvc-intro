@@ -3,7 +3,7 @@ Bundler.require
 # require 'sinatra/cookies'
 require_all 'app'
 
-db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/database_name')
+db = URI.parse(ENV['HEROKU_POSTGRESQL_PUCE_URL'] || 'postgres://localhost/database_name')
 
 	ActiveRecord::Base.establish_connection(
 			:adapter => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
