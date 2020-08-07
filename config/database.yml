@@ -3,7 +3,6 @@ development:
   encoding: unicode
   database: database_name
   pool: 2
-  username: your_username
 production:
   adapter: postgresql
   encoding: unicode
