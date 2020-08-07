@@ -11,4 +11,5 @@ gem 'shotgun'
 gem 'sinatra'
 gem 'rest-client'
 gem 'bcrypt'
+gem "pg"
 # gem 'sinatra-contrib'
