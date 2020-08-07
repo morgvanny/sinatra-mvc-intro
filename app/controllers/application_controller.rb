@@ -1,9 +1,20 @@
 class ApplicationController < Sinatra::Base
+
   configure do
     enable :sessions
-    set :session_secret, "8bc8c3d321223b8205514ae212344bef609a33d8775be9398d942a989bc443a7970f69cab062f50593d6cfeccc249463fd231a8590c8dc2dcee6cab5f6419931"
+    set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
     set :views, './app/views'
-    helpers Sinatra::Cookies
+  end
+
+  helpers do
+    def signed_in?
+      !!session[:user_id]
+    end
+
+    def current_user
+      @user ||= User.find(session[:user_id])
+    end
+
   end
 
   get '/' do
@@ -21,4 +32,9 @@ class ApplicationController < Sinatra::Base
     "The color cookie has been set to blue"
   end
 
+  def redirect_if_logged_out
+    if !signed_in?
+      redirect to '/sessions/new'
+    end
+  end
 end

@@ -1,4 +1,14 @@
-<div><a href="/books">Home</a> | <a href="/books/new">New Book</a></div><br>
+<div><a href="/books">Home</a> | <a href="/books/new">New Book</a>
+<% if signed_in?%>
+ |
+<form action='/sessions' method=post>
+<input type=hidden name=_method value=delete>
+<input type=submit value=Logout>
+</form>
+<% else %>
+| <a href=/sessions/new>Log in</a>
+<% end%>
+</div><br>
 <% if @error %>
   <p><%= @error %></p>
 <% end %>
