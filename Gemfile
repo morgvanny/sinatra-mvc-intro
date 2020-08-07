@@ -11,4 +11,5 @@ gem 'sinatra'
 gem 'rest-client'
 gem 'bcrypt'
 gem "pg"
+gem "puma"
 # gem 'sinatra-contrib'
