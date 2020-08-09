@@ -7,14 +7,7 @@ class UsersController < ApplicationController
 
   # POST: /users
   post "/users" do
-    @user = User.new(params)
-    if @user.save
-      session[:user_id] = @user.id
-      redirect "/books"
-    else
-      @error = @user.errors.full_messages[0]
-      erb :"/users/new.html"
-    end
+    redirect "/users"
   end
 
   # GET: /users/5
