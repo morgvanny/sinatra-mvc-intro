@@ -1,14 +1,17 @@
 source "https://rubygems.org"
-
-gem 'activerecord', '~> 5'
+ruby '2.7.1'
+gem 'activerecord', '~> 5.2'
 gem 'sinatra-activerecord'
-gem 'rake'
-gem 'sqlite3'
-gem 'pry'
 gem 'require_all'
 gem 'rack'
-gem 'shotgun'
 gem 'sinatra'
-gem 'rest-client'
 gem 'bcrypt'
-gem 'sinatra-contrib'
+gem 'puma'
+gem 'pg'
+
+group :development do
+  gem 'shotgun'
+  gem 'pry'
+  gem 'rake'
+  gem 'sqlite3'
+end
