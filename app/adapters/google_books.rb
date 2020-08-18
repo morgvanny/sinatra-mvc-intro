@@ -2,14 +2,8 @@ module GoogleBooks
   class Adapter
     BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q='
 
-    attr_reader :author
-
-    def initialize(author)
-      @author = author
-    end
-
-    def fetch_books
-      books = JSON.parse(RestClient.get(author_url))
+    def fetch_books(author)
+      books = JSON.parse(RestClient.get(author_url(author))
 
       books['items'].each do |item|
         book = ::Book.new
@@ -23,7 +17,7 @@ module GoogleBooks
 
     private
 
-    def author_url(max_results = 5)
+    def author_url(author, max_results = 5)
       "#{BASE_URL}\"#{author}\"&inauthor:\"#{author}\"&maxResults=#{max_results}"
     end
 
