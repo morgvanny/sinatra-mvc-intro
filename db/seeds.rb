@@ -1,8 +1,9 @@
 Book.destroy_all
 
-GoogleBooks::Adapter.new("Angela Davis").fetch_books
-GoogleBooks::Adapter.new("Kwame Ture").fetch_books
-GoogleBooks::Adapter.new("Oscar Wilde").fetch_books
-GoogleBooks::Adapter.new("Karl Marx").fetch_books
-GoogleBooks::Adapter.new("Vladimir Lenin").fetch_books
-GoogleBooks::Adapter.new("Marcel Duchamp").fetch_books
+adapter = GoogleBooks::Adapter.new
+adapter.fetch_books("Angela Davis")
+adapter.fetch_books("Kwame Ture")
+adapter.fetch_books("Oscar Wilde")
+adapter.fetch_books("Karl Marx")
+adapter.fetch_books("Vladimir Lenin")
+adapter.fetch_books("Marcel Duchamp")
